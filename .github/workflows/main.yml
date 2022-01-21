@@ -31,4 +31,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build
-        run: docker build -t back .
+        run: docker build -t ${{ secrets.DOCKER_USER }}/back .
+      - name: Push
+        run: docker push ${{ secrets.DOCKER_USER }}/back:latest
